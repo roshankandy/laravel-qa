@@ -8365,3 +8365,7 @@ button.close {
   color: #fff;
 }
 
+form .is-invalid {
+  border-color: red !important;
+}
+
