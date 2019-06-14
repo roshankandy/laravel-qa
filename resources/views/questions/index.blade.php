@@ -9,11 +9,11 @@
                     <div class="row well">
                         <div class="col-md-9">
                             <h2 style="margin-top:0">All Questions</h2>
-                        </div>    
+                        </div>
                         <div class="col-md-3">
                             <a href="{{route('questions.create')}}" class="btn btn-success">Ask Question</a>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 <div class="card-body">
@@ -35,20 +35,29 @@
                         </div>
                         <div class="col-md-9">
                             <div class="media-body">
-                                <h3 class="mt-0" style="margin-top:0"><a href="{{$question->url}}">{{$question->title}}</a> - Queen {{$question->user->my_queen}}</h3>
-                                <p class="lead">
-                                    Asked by
-                                    {{-- {{$question->users->name}}--}}
-                                    <a href="{{$question->user->url}}">{{$question->user->name}}</a>
-                                    <small class="text-muted">{{$question->created_date}}</small>
-                                </p>
-                                {{str_limit($question->body,250)}}
+                                <div class="col-md-10">
+                                    <h3 class="mt-0" style="margin-top:0"><a href="{{$question->url}}">{{$question->title}}</a> - Queen {{$question->user->my_queen}}</h3>
+                                    <p class="lead">
+                                        Asked by
+                                        {{-- {{$question->users->name}}--}}
+                                        <a href="{{$question->user->url}}">{{$question->user->name}}</a>
+                                        <small class="text-muted">{{$question->created_date}}</small>
+                                    </p>
+                                    {{str_limit($question->body,250)}}
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="{{route('questions.edit',$question->id)}}" class="btn btn-sm btn-info">Edit</a>
+                                </div>
+
+
+
+                                
 
                             </div>
                         </div>
                     </div>
 
-                
+
                     @endforeach
                     {{--<div class="text-center">--}}
                     {{--{{$questions->links()}}--}}
